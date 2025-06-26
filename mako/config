@@ -1,0 +1,22 @@
+# Basic required settings (must come first)
+layer=overlay
+background-color=#15151580
+
+# Then add your other settings:
+font=JetBrainsMono 11
+text-color=#E8E3E3
+progress-color=#8DA3B9
+border-color=#15151580
+border-size=0
+border-radius=5
+margin=12
+padding=0,5,10
+width=300
+height=110
+icons=1
+max-icon-size=64
+default-timeout=5000
+ignore-timeout=1
+
+[urgency=high]
+border-color=#B66467

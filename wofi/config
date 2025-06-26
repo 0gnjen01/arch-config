@@ -1,0 +1,5 @@
+mode = drun
+allow_images = true
+image_size=25
+width = 600
+height = 300

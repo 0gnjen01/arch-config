@@ -1,0 +1,112 @@
+@use "sass:color";
+
+$bg: rgba(21, 21, 21, 0.7);  // #151515B3 converted
+$fg: #e8e3e3;
+$accent: rgb(141, 163, 185);  // #8DA3B9 converted
+$radius: 5px;
+
+window.Bar {
+    border: none;
+    box-shadow: none;
+    background-color: $bg;
+    color: $fg;
+    font-size: 1.1em;
+    font-weight: bold;
+    font-family: "JetBrains Mono", Regular;
+    
+
+    label {
+        margin: 0 8px;
+    }
+
+    .Workspaces  {
+        button {
+            all: unset;
+            background-color: transparent;
+
+            &:hover label {
+                background-color: color.adjust($bg, $lightness: 50%)
+            }
+
+            &:active label {
+                background-color: color.adjust($fg, $alpha: 0.8);
+            }
+        }
+
+        label {
+            transition: 200ms;
+            padding: 0 8px;
+            margin: 2px;
+            border-radius: $radius;
+            border: 0pt solid transparent;
+        }
+
+        .focused label {
+            color: $accent;
+            border-color: $accent;
+        }
+    }
+
+    .SysTray {
+        margin-right: 8px;
+
+        button {
+            padding: 0 4px;
+            box-shadow: none;
+            background-color: transparent;
+            background-image: none;
+            border: none;
+        }
+         button:hover {
+             background-color: color.adjust($bg, $lightness: 50%)
+         }
+    }
+
+    .FocusedClient {
+        color: $accent;
+    }
+
+    .AudioSlider {
+        * {
+            all: unset;
+        }
+
+        icon {
+            margin-right: .6em;
+        }
+
+        & {
+            margin: 0 1em;
+        }
+
+        trough {
+            background-color: color.adjust($fg, $alpha: -0.8);
+            border-radius: $radius;
+        }
+
+        highlight {
+            background-color: $accent;
+            min-height: .8em;
+            border-radius: $radius;
+        }
+
+        slider {
+            background-color: $accent;
+            border-radius: $radius;
+            min-height: 0em;
+            min-width: 0em;
+            margin: -.0em;
+        }
+        highlight:hover {
+            background-color: color.adjust($accent, $lightness: 15%);
+        }
+
+    }
+
+    .Time {
+        padding: 5px 2px;
+        &:hover {
+           background-color: color.adjust($bg, $lightness: 50%)
+        }   
+    }
+}
